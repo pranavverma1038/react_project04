@@ -7,9 +7,12 @@ function Main() {
     const {onSent, recentPrompt,showResult,loading,resultData,setInput,input} = useContext(Context)
   return (
     <div className='main'>
-        <div className='nav'>
+       <div className='nav'>
+            <div style={{ display: 'flex',  alignItems: 'center', gap: '10px' }}>
             <p>Gemini</p>
-            <img src={assets.user_icon} alt="" />
+            <img className='gemini-icon' src={assets.gemini_icon} alt="" />
+            </div>
+            <img className='user-icon' src={assets.user_icon} alt="" />
         </div>
         <div className='main-container'>
 
