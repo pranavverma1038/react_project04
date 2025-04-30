@@ -16,8 +16,10 @@ const Sidebar = () => {
   return (
     <div className={`sidebar ${isDarkTheme? 'dark' : 'light'}`}>
       <div className="top">
-          <img onClick={() =>
-            setExtended(prev=>!prev)} className='menu' src={assets.menu_icon} alt="" />
+          <img 
+          style={{width:30}}
+          onClick={() =>
+            setExtended(prev=>!prev)} className='menu' src='/menu.svg' alt="" />
           <div onClick={()=>newChat()}
           className="new-chat">
             <img style={{backgroundColor: isDarkTheme ? '#e6eaf1' : '#e6eaf1'}}
@@ -47,19 +49,20 @@ const Sidebar = () => {
         </div>
         <div className="bottom">
             <div className="bottom-item recent-entry">
-                <img src={assets.question_icon} alt=""/>
+                <img src='/question.svg' alt=""/>
                 {isExtended ? <p
                 style={{color: isDarkTheme ? 'white' : 'black'}}
                 >Help</p> : null}
             </div>
             <div className="bottom-item recent-entry">
-                <img src={assets.history_icon} alt=""/>
+                <img src='/clock.svg' alt=""/>
                 {isExtended ? <p
                 style={{color: isDarkTheme ? 'white' : 'black'}}
                 >Activity</p> : null}
             </div>
-            <div className="bottom-item recent-entry">
-                <img src={assets.setting_icon} alt=""/>
+            <div 
+            className="bottom-item recent-entry">
+                <img src="/setting.svg" alt=""/>
                 {isExtended ? <p
                 style={{color: isDarkTheme ? 'white' : 'black'}}
                 >Setting</p> : null}

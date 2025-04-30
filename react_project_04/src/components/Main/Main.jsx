@@ -3,6 +3,7 @@ import { assets } from '../../assets/assets'
 import  './Main.css'
 import { Context } from '../../context/Context'
 import { ThemeToggleButton,useTheme } from '../ThemeContext'
+import VoiceInput from '../VoiceChat'
 
 
 function Main() {
@@ -111,7 +112,7 @@ function Main() {
                     />
                     <div>
                         <img src={assets.gallery_icon} alt=""/>
-                        <img src={assets.mic_icon} alt=""/>
+                        <VoiceInput setInput={setInput} onSent={onSent} />
                         <img onClick={()=>onSent()} src={assets.send_icon} alt=""/>
                     </div>
                 </div>
