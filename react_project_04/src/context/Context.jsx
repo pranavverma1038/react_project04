@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import generateResponse from "../config/gemini";  // Correct import
+import generateResponse from "../config/gemini";  
 
 export const Context = createContext();
 
@@ -30,6 +30,7 @@ const ContextProvider = (props) => {
     setShowResult(true)
     let response;
     if(prompt !== undefined){
+      setPreviousPrompts(prev => [...prev, prompt])
       response = await generateResponse(prompt)
       setRecentPrompt(prompt)
     }else{

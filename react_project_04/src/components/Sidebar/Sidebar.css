@@ -10,6 +10,13 @@
 
 .sidebar img{
     width: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+   
+}
+
+.plus-icon{
+    background-color: #000000;
 }
 
 .sidebar .menu{
@@ -74,3 +81,4 @@
         display: none;
     }
 }
+

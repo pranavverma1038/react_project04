@@ -2,8 +2,10 @@ import React, { useContext, useState } from "react";
 import "./Sidebar.css";
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/Context";
+import { useTheme } from '../ThemeContext'
 
 const Sidebar = () => {
+  const {isDarkTheme} = useTheme()
   const [isExtended, setExtended] = useState(false)
   const {onSent,prevPrompts,setRecentPrompt,newChat} = useContext(Context)
   const loadPrompt = async (prompt)=>{
@@ -12,24 +14,30 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isDarkTheme? 'dark' : 'light'}`}>
       <div className="top">
           <img onClick={() =>
             setExtended(prev=>!prev)} className='menu' src={assets.menu_icon} alt="" />
           <div onClick={()=>newChat()}
           className="new-chat">
-            <img src={assets.plus_icon} alt="" />
+            <img style={{backgroundColor: isDarkTheme ? '#e6eaf1' : '#e6eaf1'}}
+            className="plus-icon"
+            src={assets.plus_icon} alt="" />
             {isExtended ? <p>New Chat</p> : null}
           </div>
           {isExtended ? <div className="recent">
-            <p className="recent-file">Recent</p>
+            <p className="recent-file"
+            style={{color: isDarkTheme ? 'white' : 'black'}}
+            >Recent</p>
             {prevPrompts.map((item,index)=>{
                return(
                 <div onClick = {()=>
                   loadPrompt(item)
                 }className="recent-entry">
                   <img src={assets.message_icon} alt="" />
-                  <p>{item.slice(0,18)}...</p>
+                  <p
+                  style={{color: isDarkTheme ? 'white' : 'black'}}
+                  >{item.slice(0,18)}...</p>
                 </div>
                )
             })}
@@ -40,15 +48,21 @@ const Sidebar = () => {
         <div className="bottom">
             <div className="bottom-item recent-entry">
                 <img src={assets.question_icon} alt=""/>
-                {isExtended ? <p>Help</p> : null}
+                {isExtended ? <p
+                style={{color: isDarkTheme ? 'white' : 'black'}}
+                >Help</p> : null}
             </div>
             <div className="bottom-item recent-entry">
                 <img src={assets.history_icon} alt=""/>
-                {isExtended ? <p>Activity</p> : null}
+                {isExtended ? <p
+                style={{color: isDarkTheme ? 'white' : 'black'}}
+                >Activity</p> : null}
             </div>
             <div className="bottom-item recent-entry">
                 <img src={assets.setting_icon} alt=""/>
-                {isExtended ? <p>Setting</p> : null}
+                {isExtended ? <p
+                style={{color: isDarkTheme ? 'white' : 'black'}}
+                >Setting</p> : null}
             </div>
         </div>
      

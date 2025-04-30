@@ -200,3 +200,14 @@
         gap: 5px
     }
 }
+
+.light {
+    background-color: white;
+    color: black;
+  }
+  
+  
+.dark {
+    background-color: #121212;
+    color: white;
+  }
