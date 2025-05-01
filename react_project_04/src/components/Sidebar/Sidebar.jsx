@@ -36,7 +36,9 @@ const Sidebar = () => {
                 <div onClick = {()=>
                   loadPrompt(item)
                 }className="recent-entry">
-                  <img src={assets.message_icon} alt="" />
+                  <img 
+                  style={{backgroundColor:'white', borderRadius:'50%'}}
+                  src={assets.message_icon} alt="" />
                   <p
                   style={{color: isDarkTheme ? 'white' : 'black'}}
                   >{item.slice(0,18)}...</p>
