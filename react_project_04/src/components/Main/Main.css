@@ -255,9 +255,15 @@
     .main .card img{
         width:25px;
     }
+    .main-bottom{
+        margin-left: -13px;
+    }
 }
 @media (max-width: 600px){
     .main .card img{
         width:10px;
+    }
+    .main-bottom{
+        margin-left: -13px;
     }
 }
