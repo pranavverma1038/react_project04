@@ -81,6 +81,7 @@
 
 .main-bottom{
     bottom: 0;
+    position: fixed;
     width: 100%;
     max-width: 900px;
     margin: auto;
