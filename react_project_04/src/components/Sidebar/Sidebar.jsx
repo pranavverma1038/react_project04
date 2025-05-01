@@ -17,7 +17,7 @@ const Sidebar = () => {
     <div className={`sidebar ${isDarkTheme? 'dark' : 'light'}`}>
       <div className="top">
           <img 
-          style={{width:30}}
+          style={{width:30 , backgroundColor:'white'}}
           onClick={() =>
             setExtended(prev=>!prev)} className='menu' src='/menu.svg' alt="" />
           <div onClick={()=>newChat()}

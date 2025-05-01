@@ -10,7 +10,7 @@
 
 .sidebar img{
     width: 20px;
-    background-color: #ffffff;
+    background: transparent;
     border-radius: 15%;
    
 }
